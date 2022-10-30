@@ -22,6 +22,34 @@ public class Rationnel {
         this.normalise();
     }
 
+    public void fois(Rationnel r){
+        this.numerateur = this.numerateur * r.numerateur;
+        this.denominateur = this.denominateur * r.denominateur;
+        this.normalise();
+    }
+
+    public void oppose(){
+        this.numerateur = -this.numerateur;
+    }
+
+    public void inverse(){
+        int temp = this.numerateur;
+        this.numerateur = this.denominateur;
+        this.denominateur = temp;
+    }
+
+    public void soustraction(Rationnel r){
+        this.numerateur = this.numerateur * r.denominateur - this.denominateur * r.numerateur;
+        this.denominateur = this.denominateur * r.denominateur;
+        this.normalise();
+    }
+
+    public void division(Rationnel r){
+        this.numerateur = this.numerateur * r.denominateur;
+        this.denominateur = this.denominateur * r.numerateur;
+        this.normalise();
+    }
+
     // toString
     public String toString(){
         return this.numerateur + "/" + this.denominateur;
