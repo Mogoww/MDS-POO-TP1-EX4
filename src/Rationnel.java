@@ -15,6 +15,20 @@ public class Rationnel {
         this.numerateur /= pgcd;
         this.denominateur /= pgcd;
     }
+
+    public void plus(Rationnel r){
+        this.numerateur = this.numerateur * r.denominateur + this.denominateur * r.numerateur;
+        this.denominateur = this.denominateur * r.denominateur;
+        this.normalise();
+    }
+
+    // toString
+    public String toString(){
+        return this.numerateur + "/" + this.denominateur;
+    }
+
+
+
     private int pgcd(int a, int b){
         // calculer le PGCD de a et b
         int r = a % b;
